@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Test Runner for in-memory-column-store in C
+
+cmake -H. -Bbuild
+
+cd build
+
+# Run Unit Tests
+make test
+
+# Run Integration Tests
+make integration_test

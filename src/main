@@ -1,0 +1,22 @@
+// src/main.c
+#include <stdio.h>
+#include <stdlib.h>
+#include "include/column.h"
+#include "include/dictionary.h"
+#include "include/scanner.h"
+#include "include/error.h"
+
+int main(int argc, char *argv[]) {
+	if (argc != 2) {
+		fprintf(stderr, "Usage: %s <test_file>", argv[0]);
+		return 1;
+	}
+
+	// Load and process test file
+	if (process_test_file(argv[1]) != 0) {
+		fprintf(stderr, "Error processing test file.");
+		return 1;
+	}
+
+	return 0;
+}
